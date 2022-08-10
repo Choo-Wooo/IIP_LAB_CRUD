@@ -39,7 +39,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto" style="font-family: noto-medium;">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-family: noto-medium;" href="{% url 'index' %}">home</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-family: noto-medium;" href="{% url 'board' %}">Research</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-family: noto-medium;" href="{% url 'board1' %}">Research</a></li>
                 </ul>
             </div>
         </div>
@@ -51,8 +51,14 @@
             
             <div class="block" style="height:3em;">
                 <div class="inline-block" >
-                    <a class="nav-link js-scroll-trigger" href="{% url 'board' %}" style="color: black;">
+                    <a class="nav-link js-scroll-trigger" href="{% url 'board1' %}" style="color: black; float: left;">
                         <h2 style="float: left;">Research</h2>
+                    </a>
+                    <a class="nav-link js-scroll-trigger" href="{% url 'board2' %}" style="color: black; float: left;">
+                        <h2 style="float: left;">PAPER_REVIEW</h2>
+                    </a>
+                     <a class="nav-link js-scroll-trigger" href="{% url 'board3' %}" style="color: black; float: left;">
+                        <h2 style="float: left;">D2L</h2>
                     </a>
                 </div>
             </div>
@@ -75,6 +81,7 @@
                <div class="inline-block" style="float: right;">
                 <p style="float: left; font-family:noto-thin;font-weight:lighter; float:right; ">WRITER: {{post.writer}}</p>
                </div>
+                <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=iiplab.gachon.ac.kr/media/{{post.file}}" width="800" height="600"></iframe>
             </div>
             
             {%if post.file %}
@@ -96,8 +103,8 @@
             </div>
             
             <div class="block" style="margin-top: 5%;">
-                <button class="my-button" onclick="location.href = '/board/{{post.pk}}/delete'" style="float: right; margin-right:2%;">DELETE</button>
-                <button class="my-button" onclick="location.href = '/board/{{post.pk}}/edit'" style="float: right; margin-right:2%;">MODIFY</button>
+                <button class="my-button" onclick="location.href = '/board1/{{post.pk}}/delete'" style="float: right; margin-right:2%;">DELETE</button>
+                <button class="my-button" onclick="location.href = '/board1/{{post.pk}}/edit'" style="float: right; margin-right:2%;">MODIFY</button>
             </div>
                 
         </div>

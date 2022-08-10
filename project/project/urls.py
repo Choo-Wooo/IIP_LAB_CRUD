@@ -23,11 +23,21 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', app.views.index, name='index'),
-    path('board/', app.views.board, name='board'),
-    path('board/<int:pk>/', app.views.posting, name='posting'),
-    path('board/new_post/', app.views.new_post),
-    path('board/<int:pk>/delete', app.views.board_delete, name='board_delete'),
-    path('board/<int:pk>/edit', app.views.board_edit, name='board_edit'),
+    path('board1/', app.views.board1, name='board1'),
+    path('board1/<int:pk>/', app.views.posting, name='posting'),
+    path('board1/new_post/', app.views.new_post),
+    path('board1/<int:pk>/delete', app.views.board_delete, name='board_delete'),
+    path('board1/<int:pk>/edit', app.views.board_edit, name='board_edit'),
+    path('board2/', app.views.board2, name='board2'),#not yet
+    path('board2/<int:pk>/', app.views.posting, name='posting'),
+    path('board2/new_post/', app.views.new_post),
+    path('board2/<int:pk>/delete', app.views.board_delete, name='board_delete'),
+    path('board2/<int:pk>/edit', app.views.board_edit, name='board_edit'),
+    path('board3/', app.views.board3, name='board3'),#not yet
+    path('board3/<int:pk>/', app.views.posting, name='posting'),
+    path('board3/new_post/', app.views.new_post),
+    path('board3/<int:pk>/delete', app.views.board_delete, name='board_delete'),
+    path('board3/<int:pk>/edit', app.views.board_edit, name='board_edit'),
     path('login', app.views.login, name="login")
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

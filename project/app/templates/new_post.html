@@ -39,7 +39,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto" style="font-family: noto-medium;">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-family: noto-medium;" href="{% url 'index' %}">home</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-family: noto-medium;" href="{% url 'board' %}">Research</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-family: noto-medium;" href="{% url 'board1' %}">Research</a></li>
                 </ul>
             </div>
         </div>
@@ -51,7 +51,7 @@
             <div class="block board mx-auto">
                 <div class="block mx-auto" style="height:3em;">
                     <div class="inline-block" >
-                        <a class="nav-link js-scroll-trigger" href="{% url 'board' %}" style="color: black;">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'board1' %}" style="color: black;">
                             <h2 style="float: left;">UPLOAD</h2>
                         </a>
                     </div>
@@ -79,6 +79,16 @@
                         </div>
                         <div class="inline-block" style=" width:80%; height:50px; padding-top:7px;">
                             <input type="text" name="writer"  style="width: 90%;">
+                        </div>
+                    </div>
+                    <div class="block" >
+                        <div class="inline-block" style="background-color:#e2e2e2;  width:20%; height:50px; padding-top:7px; border-bottom: 0.5px solid rgb(174, 190, 206);">
+                            THEMA
+                        </div>
+                        <div class="inline-block" style=" width:80%; height:50px; padding-top:7px;">
+                            <input type="radio" name="thema" value="RESEARCH" checked="checked">RESEARCH
+                            <input type="radio" name="thema" value="PAPERREVIEW" >PAPERREVIEW
+                            <input type="radio" name="thema" value="D2L">D2L
                         </div>
                     </div>
                     <div class="block" >

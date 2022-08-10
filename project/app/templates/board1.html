@@ -40,7 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto" style="font-family: noto-medium;">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-family: noto-medium;" href="{% url 'index' %}">home</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-family: noto-medium;" href="{% url 'board' %}">Research</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-family: noto-medium;" href="{% url 'board1' %}">Research</a></li>
                 </ul>
             </div>
         </div>
@@ -52,11 +52,14 @@
             <div class="block board mx-auto">
                 <div class="block mx-auto" style="height:3em;">
                     <div class="inline-block" >
-                        <a class="nav-link js-scroll-trigger" href="{% url 'board' %}" style="color: black;">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'board1' %}" style="color: black; float: left;">
                             <h2 style="float: left;">RESEARCH</h2>
                         </a>
-                        <a class="nav-link js-scroll-trigger" href="{% url 'board' %}" style="color: black;">
-                            <h2 style="float: left;">SEMINAR</h2>
+                        <a class="nav-link js-scroll-trigger" href="{% url 'board2' %}" style="color: black; float: left;">
+                            <h2 style="float: left;">PAPER_REVIEW</h2>
+                        </a>
+                         <a class="nav-link js-scroll-trigger" href="{% url 'board3' %}" style="color: black; float: left;">
+                            <h2 style="float: left;">D2L</h2>
                         </a>
                     </div>
                 </div>
@@ -73,38 +76,84 @@
                         <div class="box" style="width: 45%;">
                             <p>TITLE</p>
                         </div>
-                        <div class="box" style="width: 25%; ">
+                        <div class="box" style="width: 15%; ">
                             <p>WRITER</p>
                         </div>
-                        <div class="box" style="width: 25%; ">
+                        <div class="box" style="width: 35%; ">
                             <p>DATE</p>
                         </div>
                     </div>
                    
         
                 </div>
-        
-                <div class="board-contents mx-auto" style="margin-top: 2%;">
-        
-                    {% for i in board.all %}
-                        <a href="{{i.pk}}/" class="posting-click">
-                            <div class="contents-box" style="width: 45%;">
-                                {{i.title}}
-                            </div>
-                            <div class="contents-box" style="width: 25%;">
-                                {{i.writer}}
-                            </div>
-                            <div class="contents-box" style="width: 25%; ">
-                                {{i.date}}
-                            </div>
-                            <br>
-                            <br>
-                        </a>
-                        <hr style="margin-top: -1em;">
-                    {% endfor %}
+                {% for i in board1.all reversed %}
+                {% if i.thema == "RESEARCH" %}
+                <div class="board-contents mx-auto" style="margin-top: 1%;">
+
+                            <a href="{{i.pk}}/" class="posting-click">
+                                <div class="contents-box" style="width: 45%;">
+                                    {{i.title}}
+                                </div>
+                                <div class="contents-box" style="width: 15%;">
+                                    {{i.writer}}
+                                </div>
+                                <div class="contents-box" style="width: 35%; ">
+                                    {{i.date}}
+                                </div>
+                                <br>
+                                <br>
+                            </a>
+                            <hr style="margin-top: -1em;">
                     <br>
-                    <button class="my-button" onclick="location.href = 'new_post/'" style="float: right; margin-right:2%;">WRITE</button>
                 </div>
+                {% endif %}
+                {% endfor %}
+
+                {% for i in board2.all reversed %}
+                {% if i.thema == "PAPERREVIEW" %}
+                <div class="board-contents mx-auto" style="margin-top: 1%;">
+                            <a href="{{i.pk}}/" class="posting-click">
+                                <div class="contents-box" style="width: 45%;">
+                                    {{i.title}}
+                                </div>
+                                <div class="contents-box" style="width: 15%;">
+                                    {{i.writer}}
+                                </div>
+                                <div class="contents-box" style="width: 35%; ">
+                                    {{i.date}}
+                                </div>
+                                <br>
+                                <br>
+                            </a>
+                            <hr style="margin-top: -1em;">
+
+                    <br>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+                {% for i in board3.all reversed %}
+                {% if i.thema == "D2L" %}
+                <div class="board-contents mx-auto" style="margin-top: 1%;">
+                            <a href="{{i.pk}}/" class="posting-click">
+                                <div class="contents-box" style="width: 45%;">
+                                    {{i.title}}
+                                </div>
+                                <div class="contents-box" style="width: 15%;">
+                                    {{i.writer}}
+                                </div>
+                                <div class="contents-box" style="width: 35%; ">
+                                    {{i.date}}
+                                </div>
+                                <br>
+                                <br>
+                            </a>
+                            <hr style="margin-top: -1em;">
+                    <br>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <button class="my-button" onclick="location.href = 'new_post/'" style="float: right; margin-right:2%;">WRITE</button>
             </div>
         </div>
         
